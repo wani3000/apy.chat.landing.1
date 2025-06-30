@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APY - Crypto AI Banking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+            <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/images/apylogo.svg" alt="APY Logo" class="logo-svg">
+                </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Video Background -->
+        <video autoplay muted class="hero-video" id="hero-video">
+            <source src="assets/videos/bg.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Video Overlay -->
+        <div class="hero-video-overlay"></div>
+        
+        <!-- Animated background gradient orbs -->
+        <div class="hero-bg-animation">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="gradient-orb orb-4"></div>
+            <div class="gradient-orb orb-5"></div>
+            <div class="gradient-orb orb-6"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 id="typewriter-text" class="hero-main-title"></h1>
+            <p class="hero-subtitle">Your AI banker that hunts down the best crypto yields — so you don't have to.</p>
+            
+            <div class="search-container">
+                <p class="search-question">What can I help with?</p>
+                <div class="search-input-container">
+                    <input type="text" class="search-input" placeholder="Ask me anything about crypto investments..." id="searchInput">
+                    <button class="search-button" onclick="handleSearch()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="search-chips">
+                    <div class="chip" onclick="selectChip('Full portfolio breakdown')">Full portfolio breakdown</div>
+                    <div class="chip" onclick="selectChip('Trending DeFi Protocols')">Trending DeFi Protocols</div>
+                    <div class="chip" onclick="selectChip('Stable coin yield strategies')">Stable coin yield strategies</div>
+                    <div class="chip" onclick="selectChip('Top ETH APY Pools')">Top ETH APY Pools</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Fragmented data,<br/>Missed opportunities</h2>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1: Fragmented Liquidity -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Fragmented Liquidity</h3>
+                        <p>Investment products scattered across DEXs, and protocols</p>
+                    </div>
+                    <div class="service-demo">
+                        <div class="demo-chat">
+                            <div class="chat-message user">Uniswap: ETH/USDC 0.3%</div>
+                            <div class="chat-message bot">SushiSwap: ETH/USDC 0.25%</div>
+                            <div class="chat-typing">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: App Switching -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>App Switching</h3>
+                        <p>Wasted hours switching between apps and wallets</p>
+                    </div>
+                    <div class="service-demo">
+                        <div class="demo-content">
+                            <div class="content-input">MetaMask → Uniswap → Compound...</div>
+                            <div class="content-output">
+                                <div class="generating">Switching between apps...</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Manual Discovery -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Manual Discovery</h3>
+                        <p>Lack of automation in finding and executing optimal opportunities</p>
+                    </div>
+                    <div class="service-demo">
+                        <div class="demo-automation">
+                            <div class="automation-stats">
+                                <div class="stat">
+                                    <div class="stat-number">6hrs</div>
+                                    <div class="stat-label">Daily Research</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">73%</div>
+                                    <div class="stat-label">Opportunities Missed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Discovery Only -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Discovery Only</h3>
+                        <p>Existing tools stop at discovery — not execution</p>
+                    </div>
+                    <div class="service-demo">
+                        <div class="demo-llm">
+                            <div class="model-interface">
+                                <div class="model-input">High APY found: 12.5%</div>
+                                <div class="model-output">
+                                    <div class="training-progress">
+                                        <div class="progress-circle">
+                                            <div class="progress-value">⚠️</div>
+                                        </div>
+                                        <div class="training-status">Manual execution required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Capabilities</h2>
+                <p class="section-subtitle">Advanced AI features designed for crypto investors</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-content">
+                        <h3>Personalized Investment Recommendations</h3>
+                        <p>Connect your wallet. Let AI find top opportunities instantly.</p>
+                        <div class="step-demo">
+                            <div class="crypto-ticker">
+                                <div class="ticker-row ticker-row-1">
+                                    <div class="ticker-item">
+                                        <div class="coin-icon" style="background: linear-gradient(45deg, #9945FF, #14F195);">🟣</div>
+                                        <span class="coin-name">Solana</span>
+                                        <span class="coin-price">$194.46</span>
+                                        <span class="coin-change negative">-0.65%</span>
+                                    </div>
+                                    <div class="ticker-item">
+                                        <div class="coin-icon" style="background: linear-gradient(45deg, #008DE4, #00D4AA);">🔵</div>
+                                        <span class="coin-name">Dash</span>
+                                        <span class="coin-price">$24.68</span>
+                                        <span class="coin-change positive">+1.71%</span>
+                                    </div>
+                                    <div class="ticker-item">
+                                        <div class="coin-icon" style="background: linear-gradient(45deg, #23292F, #3C3C3D);">⚪</div>
+                                        <span class="coin-name">XRP</span>
+                                        <span class="coin-price">$2.407</span>
+                                        <span class="coin-change positive">+1.66%</span>
+                                    </div>
+                                    <div class="ticker-item">
+                                        <div class="coin-icon" style="background: linear-gradient(45deg, #627EEA, #8A92B2);">🔷</div>
+                                        <span class="coin-name">Ethereum</span>
+                                        <span class="coin-price">$2,609.12</span>
+                                        <span class="coin-change positive">+2.34%</span>
+                                    </div>
+                                </div>
+                                <div class="ticker-row ticker-row-2">
+                                    <div class="ticker-item">
+                                        <div class="coin-icon" style="background: linear-gradient(45deg, #9945FF, #14F195);">🟣</div>
+                                        <span class="coin-name">Solana</span>
+                                        <span class="coin-price">$194.46</span>
+                                        <span class="coin-change negative">-0.65%</span>
+                                    </div>
+                                    <div class="ticker-item">
+                                        <div class="coin-icon" style="background: linear-gradient(45deg, #008DE4, #00D4AA);">🔵</div>
+                                        <span class="coin-name">Dash</span>
+                                        <span class="coin-price">$24.68</span>
+                                        <span class="coin-change positive">+1.71%</span>
+                                    </div>
+                                    <div class="ticker-item">
+                                        <div class="coin-icon" style="background: linear-gradient(45deg, #23292F, #3C3C3D);">⚪</div>
+                                        <span class="coin-name">XRP</span>
+                                        <span class="coin-price">$2.407</span>
+                                        <span class="coin-change positive">+1.66%</span>
+                                    </div>
+                                    <div class="ticker-item">
+                                        <div class="coin-icon" style="background: linear-gradient(45deg, #F7931A, #FFD700);">🟡</div>
+                                        <span class="coin-name">Bitcoin</span>
+                                        <span class="coin-price">$94.59</span>
+                                        <span class="coin-change positive">+3.22%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <h3>Automated Rebalancing Agent</h3>
+                        <p>Maintain your yield goals automatically with smart reallocation.</p>
+                        <div class="step-demo">
+                            <div class="rebalance-demo">
+                                <div class="portfolio-view">
+                                    <div class="portfolio-header">
+                                        <div class="status-dot"></div>
+                                        <span>Auto-Rebalancing Active</span>
+                                    </div>
+                                    <div class="allocation-bars">
+                                        <div class="allocation-item">
+                                            <span class="asset-name">USDC</span>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 45%"></div>
+                                            </div>
+                                            <span class="percentage">45%</span>
+                                        </div>
+                                        <div class="allocation-item">
+                                            <span class="asset-name">ETH</span>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 35%"></div>
+                                            </div>
+                                            <span class="percentage">35%</span>
+                                        </div>
+                                        <div class="allocation-item">
+                                            <span class="asset-name">BTC</span>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 20%"></div>
+                                            </div>
+                                            <span class="percentage">20%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <h3>On-Chain Execution</h3>
+                        <p>Invest directly within the chat interface — quick, secure, effortless.</p>
+                        <div class="step-demo">
+                            <div class="update-panel">
+                                <div class="panel-header">
+                                    <h4>Transaction Status</h4>
+                                    <div class="status-indicator">🟢 Executed</div>
+                                </div>
+                                <div class="update-list">
+                                    <div class="update-item">Deposited 1.5 ETH to Compound</div>
+                                    <div class="update-item">APY secured: 8.3%</div>
+                                    <div class="update-item">Gas optimized: saved $12</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="roadmap-section">
+        <div class="container">
+            <div class="roadmap-header">
+                <div class="roadmap-label">ROADMAP</div>
+                <h2 class="roadmap-title">Where We're Heading</h2>
+                <p class="roadmap-subtitle">Our development roadmap for the future of crypto investing</p>
+            </div>
+            
+            <div class="roadmap-grid">
+
+                <div class="roadmap-card roadmap-card-1">
+                    <div class="roadmap-icon">
+                        <div class="milestone-number">M1</div>
+                    </div>
+                    <h4>Crypto Assets APY Aggregation + Chat Interface</h4>
+                    <p>Real-time yield discovery across DeFi protocols with intelligent chat-based interface</p>
+                </div>
+
+                <div class="roadmap-card roadmap-card-2">
+                    <div class="roadmap-icon">
+                        <div class="milestone-number">M2</div>
+                    </div>
+                    <h4>DeFi Investment Execution + Auto-Rebalancing</h4>
+                    <p>One-click investment execution with smart portfolio rebalancing to maintain optimal yield strategies</p>
+                </div>
+
+                <div class="roadmap-card roadmap-card-3">
+                    <div class="roadmap-icon">
+                        <div class="milestone-number">M3</div>
+                    </div>
+                    <h4>Fully Autonomous AI Yield Farming Agent</h4>
+                    <p>Complete automation of yield farming strategies with AI-driven decision making and risk management</p>
+                </div>
+
+                <div class="roadmap-card roadmap-card-4">
+                    <div class="roadmap-icon">
+                        <div class="milestone-number">M4</div>
+                    </div>
+                    <h4>Becomes Multi-chain</h4>
+                    <p>Cross-chain optimization and integration across multiple blockchain networks for maximum yield opportunities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="simple-footer">
+                <div class="footer-logo">
+                    <img src="apylogo.svg" alt="APY Logo" class="logo-svg">
+                </div>
+                
+                <div class="footer-socials">
+                    <a href="https://x.com" target="_blank" class="social-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://discord.com" target="_blank" class="social-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.246.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
